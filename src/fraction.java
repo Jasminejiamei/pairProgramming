@@ -1,5 +1,6 @@
 //import java.awt.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -21,6 +22,10 @@ public class fraction{
     String ansFileName;  // 答案文件名
     int trueNum;  //正确数目
     int wrongNum;    //错误数目
+    public Deposit content;
+    static final String[] SYMBOLS = new String[]{
+            "+", "-", "x", "\u00F7"
+    };
 
     /**
      * 处理随机生成的数值,这个用于分解分数对象
@@ -98,7 +103,7 @@ public class fraction{
     }
 
     /**
-     * 生成随机分数
+     * 生成随机数
      */
     private int random(int area) {
         ThreadLocalRandom random = ThreadLocalRandom.current();
@@ -130,6 +135,22 @@ public class fraction{
     }
 
     /**
+     * 把生成的每个数进行处理得出分子分母
+     */
+    private fraction calculate(String symbol, fraction left, fraction right) {
+        switch (symbol) {
+            case "+":
+                return left.add(right);
+            case "-":
+                return left.subtract(right);
+            case "x":
+                return left.multiply(right);
+            default:
+                return left.divide(right);
+        }
+    }
+
+    /**
      * 初始化
      * 生成随机题目
      */
@@ -149,22 +170,89 @@ public class fraction{
         }
     }
 
+    /**
+     * 随机生成一道四则运算题目
+     * @param fractionNum 运算符个数
+     * @return 二叉树
+     */
+    public Deposit build(int fractionNum){
+        if(fractionNum == 0){
+            return new Deposit(creatfra(),null,null);
+        }
+        ThreadLocalRandom random = ThreadLocalRandom.current();
+        recSymbols node = new recSymbols(SYMBOLS [random.nextInt(4)],null, null);
+        //左子树运算符数量
+        int left = random.nextInt(fractionNum);
+        //右子树运算符数量
+        int right = fractionNum - left - 1;
+        node.setLeft(build(left));
+        node.setRight(build(right));
+        fraction value = calculate(node.getSymbol(),node.getLeft().getValue(),node.getRight().getValue());
+        //负数处理
+        if(value.Negative()){
+            //交换左右子树，就是交换两个减数的顺序
+            if (node != null) {
+                Deposit swap = node.getLeft();
+                node.setLeft(node.getRight());
+                node.setRight(swap);
+            }
+            value = calculate(node.getSymbol(),node.getLeft().getValue(),node.getRight().getValue());
+        }
+        node.setValue(value);
+        return node;
+    }
+
+    /**
+     * 获取表达式，
+     * 打印题目与答案
+     */
+
+    public String print(){
+        return print(content) +  " = " + content.getValue();
+    }
+    public String print(Deposit node){
+        if (node == null){
+            return "";
+        }
+        String frac = node + toString();
+        String left = print(node.getLeft());
+        if (node.getLeft() instanceof recSymbols && node instanceof recSymbols) {
+            if (bracketsLeft(((recSymbols) node.getLeft()).getSymbol(), ((recSymbols) node).getSymbol())) {
+                left = "(" + " " + left + " " + ")";
+            }
+        }
+        String right = print(node.getRight());
+        if (node.getRight() instanceof recSymbols && node instanceof recSymbols) {
+            if (bracketsRight(((recSymbols) node.getRight()).getSymbol(), ((recSymbols) node).getSymbol())) {
+                right = "(" + " " + right + " " + ")";
+            }
+        }
+        return left + frac + right;
+    }
+    /**
+     * 比较两个符号谁优先级更高，子树的箱号优先级低要加括号
+     */
+    //要左括号
+    private boolean bracketsLeft(String left,String mid){
+        return (left.equals("+")|| left.equals("-")) && (mid.equals("x")||mid.equals("\u00F7"));
+    }
+    private boolean bracketsRight(String right, String mid){
+        return (right.equals("+")|| right.equals("-")) && (mid.equals("x")||mid.equals("\u00F7"))||(mid.equals("\u00F7"))||(mid.equals("-")&&(mid.equals("+")|| mid.equals("-")));
+    }
+
     private ExecutorService executor = Executors.newCachedThreadPool();
 
-//    public void createAth() {
-//        StringBuilder exercises = new StringBuilder();
-//        StringBuilder answers = new StringBuilder();
-//      List<Exercise> list = new ArrayList<>();
-//        for (int i = 1; i <= maxCount; i++) {
-//            String[] strs = exercise.print().split("=");
-//            exercises.append(i).append(". ").append(strs[0]).append("\n");
-//            answers.append(i).append(".").append(strs[1]).append("\n");
-//            lis
-// t.add(exercise);
-//        }
-//    }
-    /**
-     * 打印出来
-     */
+    public void createAth() {
+        StringBuilder exercises = new StringBuilder();
+        StringBuilder answers = new StringBuilder();
+      List<generatingTopicTree> list = new ArrayList<>();
+        for (int i = 1; i <= maxCount; i++) {
+            generatingTopicTree generate = new generatingTopicTree(this,true);
+            String[] strs = generate.print().split("=");
+            exercises.append(i).append(". ").append(strs[0]).append("\n");
+            answers.append(i).append(".").append(strs[1]).append("\n");
+            list.add(generate);
+        }
+    }
 }
 
