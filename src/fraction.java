@@ -17,7 +17,7 @@ public class fraction{
     int denArea = 20; //分母的范围
     private int mol; //分子
     private int den;  //分母
-    int maxCount = 100;//生成题目的数值最大值
+    int maxCount = 10;//生成题目的数值最大值
     String exeFileName;  // 题目文件名
     String ansFileName;  // 答案文件名
     int trueNum;  //正确数目
@@ -197,6 +197,7 @@ public class fraction{
         }
         ThreadLocalRandom random = ThreadLocalRandom.current();
         recSymbols node = new recSymbols(SYMBOLS [random.nextInt(4)],null, null);
+//        System.out.println(node);
         //左子树运算符数量
         int left = random.nextInt(fractionNum);
         //右子树运算符数量
@@ -230,7 +231,7 @@ public class fraction{
         if (node == null){
             return "";
         }
-        String frac = node + toString();
+        String frac = node.toString();
         String left = print(node.getLeft());
         if (node.getLeft() instanceof recSymbols && node instanceof recSymbols) {
             if (bracketsLeft(((recSymbols) node.getLeft()).getSymbol(), ((recSymbols) node).getSymbol())) {
@@ -272,8 +273,8 @@ public class fraction{
                 i++;
             }
         }
-        executor.execute(() -> aboutFile.writeFile(exercises.toString(), "Arithmetic"));
-        executor.execute(() -> aboutFile.writeFile(answers.toString(), "trueAns"));
+        executor.execute(() -> aboutFile.writeFile(exercises.toString(), "Exercises.txt"));
+        executor.execute(() -> aboutFile.writeFile(answers.toString(), "Answers.txt"));
         executor.shutdown();
         try {
             boolean loop = true;

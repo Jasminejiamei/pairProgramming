@@ -6,10 +6,14 @@ public class recSymbols extends Deposit {
     }
     public recSymbols(String symbol){
         super(null);
-
         this.symbol = symbol;
     }
     public String getSymbol() {
         return symbol;
+    }
+
+    @Override
+    public String toString() {
+        return " " + symbol + " ";
     }
 }
