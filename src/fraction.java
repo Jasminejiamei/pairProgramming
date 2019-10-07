@@ -69,6 +69,22 @@ public class fraction{
         this.den = den / mod;
     }
 
+    public String toString() {
+        if (den == 1) {
+            return String.valueOf(mol);
+        } else {
+            int z = 0;
+            if (den != 0 && mol > den) {
+                z = mol / den;
+            }
+            if (z == 0) {
+                return String.valueOf(mol) + "/" + String.valueOf(den);
+            } else {
+                return String.valueOf(z) + "'" + String.valueOf(mol % den) + "/" + String.valueOf(den);
+            }
+        }
+    }
+
     /**
      * 判空
      */
@@ -245,13 +261,40 @@ public class fraction{
     public void createAth() {
         StringBuilder exercises = new StringBuilder();
         StringBuilder answers = new StringBuilder();
-      List<generatingTopicTree> list = new ArrayList<>();
-        for (int i = 1; i <= maxCount; i++) {
-            generatingTopicTree generate = new generatingTopicTree(this,true);
-            String[] strs = generate.print().split("=");
-            exercises.append(i).append(". ").append(strs[0]).append("\n");
-            answers.append(i).append(".").append(strs[1]).append("\n");
-            list.add(generate);
+        List<fraction> list = new ArrayList<>();
+        for (int i = 1; i <= maxCount;) {
+            fraction generate = new fraction(true);
+            if (!list.contains(generate)){
+                String[] strs = generate.print().split("=");
+                exercises.append(i).append(". ").append(strs[0]).append("\n");
+                answers.append(i).append(".").append(strs[1]).append("\n");
+                list.add(generate);
+                i++;
+            }
+        }
+        executor.execute(() -> aboutFile.writeFile(exercises.toString(), "Arithmetic"));
+        executor.execute(() -> aboutFile.writeFile(answers.toString(), "trueAns"));
+        executor.shutdown();
+        try {
+            boolean loop = true;
+            while (loop) {
+                loop = !executor.awaitTermination(30, TimeUnit.SECONDS);  //超时等待阻塞，直到线程池里所有任务结束
+            } //等待所有任务完成
+            System.out.println("生成的" + maxCount + "道题和答案存放在当前目录下的Exercises.txt和Answers.txt，耗时为");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public fraction(boolean isBuild){
+        if(isBuild){
+            ThreadLocalRandom random = ThreadLocalRandom.current();
+            int kind = random.nextInt(4);
+            if (kind == 0) kind = 1;
+            content = build(kind);
+            while (content.getValue().Zero()){
+                content =build(kind);
+            }
         }
     }
 }
