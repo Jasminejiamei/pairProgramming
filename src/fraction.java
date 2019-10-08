@@ -20,8 +20,6 @@ public class fraction{
     int maxCount = 10;//生成题目的数值最大值
     String exeFileName;  // 题目文件名
     String ansFileName;  // 答案文件名
-    int trueNum;  //正确数目
-    int wrongNum;    //错误数目
     public Deposit content;
     static final String[] SYMBOLS = new String[]{
             "+", "-", "x", "\u00F7"
@@ -153,7 +151,7 @@ public class fraction{
     /**
      * 把生成的每个数进行处理得出分子分母
      */
-    private fraction calculate(String symbol, fraction left, fraction right) {
+    public fraction calculate(String symbol, fraction left, fraction right) {
         switch (symbol) {
             case "+":
                 return left.add(right);
@@ -184,6 +182,10 @@ public class fraction{
                 denArea = Integer.valueOf(params.get(str));
             }
         }
+    }
+
+    public fraction getResult() {
+        return content.getValue();
     }
 
     /**

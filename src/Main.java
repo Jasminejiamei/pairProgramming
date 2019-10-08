@@ -8,9 +8,9 @@ public class Main {
         args = new String[]{"-n", "10", "-r", "10", "-d", "10"};
         Map<String, String> params = checkParams(args);
         fraction opera = new fraction(params);
+        Judge judge =  new Judge();
         if(params.containsKey("-e")&&params.containsKey("-a")){
-//            opera.createAth
-            System.out.println("1");
+            judge.Judge();
         } else if(params.containsKey("-n") || params.containsKey("-r") || params.containsKey("-d")) {
             opera.createAth();
         }else {
