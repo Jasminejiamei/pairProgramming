@@ -26,7 +26,7 @@ public class aboutFile{
         File exerciseFile = new File(exerciseFileName);
         File answerFile = new File(answerFileName);
         if(!exerciseFile.exists() || !answerFile.exists()) {
-            System.out.println("文件不存在，请重试");
+            System.out.println("文件不存在！");
             return;
         }
         try (BufferedReader br1 = new BufferedReader(new FileReader(exerciseFileName));
@@ -36,7 +36,7 @@ public class aboutFile{
                 callBack.deal(line1, line2);
             }
         } catch (IOException e) {
-            System.out.println("读取文件失败...");
+            System.out.println("读取文件失败！");
         }
     }
 

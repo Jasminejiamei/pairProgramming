@@ -1,15 +1,16 @@
+/**
+ * 用于记录符号结点，与Deposit类是一样的道理
+ */
 public class recSymbols extends Deposit {
+
     private String symbol;
 
-    public recSymbols(String symbol,Deposit left,Deposit right){
+    recSymbols(String symbol, Deposit left, Deposit right){
         super(null, left, right);
         this.symbol = symbol;
     }
-//    public recSymbols(String symbol){
-//        super(null);
-//        this.symbol = symbol;
-//    }
-    public String getSymbol() {
+
+    String getSymbol() {
         return symbol;
     }
 
@@ -17,6 +18,10 @@ public class recSymbols extends Deposit {
     public String toString() {
         return " " + symbol + " ";
     }
+
+    /**
+     * 用于查重
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

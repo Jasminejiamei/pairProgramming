@@ -1,16 +1,15 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        args = new String[]{"-n", "10", "-r", "10", "-d", "10"};
+//        args = new String[]{"-n", "10", "-r", "10", "-d", "10"};
+        args = new String[]{"-e", "Exercises.txt","-a","Answers.txt"};
         Map<String, String> params = checkParams(args);
-        fraction opera = new fraction(params);
-        Judge judge =  new Judge();
+        createAth opera = new createAth(params);
+        Judge check =  new Judge(params);
         if(params.containsKey("-e")&&params.containsKey("-a")){
-            judge.Judge();
+            check.Judge();
         } else if(params.containsKey("-n") || params.containsKey("-r") || params.containsKey("-d")) {
             opera.createAth();
         }else {
@@ -36,4 +35,6 @@ public class Main {
         }
         return params;
     }
+
+
 }
