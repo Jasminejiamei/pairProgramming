@@ -9,6 +9,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 生成题目类
+ */
 public class createAth{
     private int maxNum = 100; //生成题目的最大值
     private int denArea = 20; //分母的范围
@@ -19,7 +22,23 @@ public class createAth{
     };
 
     /**
+     * 生成随机题目，初始化，把主类中输入的参数内容调进来
+     */
+    createAth(Map<String, String> params) {
+        for (String str : params.keySet()) {
+            if (str.equals("-n")) {
+                maxCount = Integer.valueOf(params.get(str));
+            } else if (str.equals("-r")) {
+                maxNum = Integer.valueOf(params.get(str));
+            } else if (str.equals("-d")) {
+                denArea = Integer.valueOf(params.get(str));
+            }
+        }
+    }
+
+    /**
      * 生成组成题目随机数
+     * area：分母的范围
      */
     private int random(int area) {
         ThreadLocalRandom random = ThreadLocalRandom.current();
@@ -27,10 +46,9 @@ public class createAth{
         if (x == 0) x = 1;
         return x;
     }
-
     /**
      * ThreadLocalRandom类在多线程环境中生成随机数。
-     * 从随机数生成器的序列返回下一个伪随机的，均匀分布的布尔值
+     * nextBoolean() 方法用于从随机数生成器的序列返回下一个伪随机的，均匀分布的布尔值
      */
     private boolean randomBoolean() {
         ThreadLocalRandom random = ThreadLocalRandom.current();
@@ -56,6 +74,10 @@ public class createAth{
 
     /**
      * 单步计算
+     * @param symbol 符号
+     * @param left  左
+     * @param right 右
+     * @return 得出来结果后经过约分的分数
      */
     private fraction calculate(String symbol, fraction left, fraction right) {
         switch (symbol) {
@@ -71,27 +93,6 @@ public class createAth{
     }
 
     /**
-     * 生成随机题目，初始化，把主类中输入的参数内容调进来
-     */
-    createAth(Map<String, String> params) {
-        for (String str : params.keySet()) {
-            if (str.equals("-n")) {
-                maxCount = Integer.valueOf(params.get(str));
-            } else if (str.equals("-r")) {
-                maxNum = Integer.valueOf(params.get(str));
-            } else if (str.equals("-e")) {
-                // 题目文件名
-                String exeFileName = (params.get(str));
-            } else if (str.equals("-a")) {
-                // 答案文件名
-                String ansFileName = params.get(str);
-            } else if (str.equals("-d")) {
-                denArea = Integer.valueOf(params.get(str));
-            }
-        }
-    }
-
-    /**
      * 随机生成一道四则运算题目
      * @param fractionNum 运算符个数
      * @return 二叉树
@@ -102,7 +103,6 @@ public class createAth{
         }
         ThreadLocalRandom random = ThreadLocalRandom.current();
         recSymbols node = new recSymbols(SYMBOLS [random.nextInt(4)],null, null);
-//        System.out.println(node);
         //左子树运算符数量
         int left = random.nextInt(fractionNum);
         //右子树运算符数量
@@ -152,9 +152,8 @@ public class createAth{
         return left + frac + right;
     }
     /**
-     * 比较两个符号谁优先级更高，子树的箱号优先级低要加括号
+     * 比较两个符号谁优先级更高，子树的箱号优先级低要加括号，左括号or右括号
      */
-    //要左括号
     private boolean bracketsLeft(String left,String mid){
         return (left.equals("+")|| left.equals("-")) && (mid.equals("x")||mid.equals("\u00F7"));
     }
@@ -206,13 +205,9 @@ public class createAth{
         }
     }
 
-
-
-    fraction getResult() {
-        return content.getValue();
-    }
-
-
+    /**
+     * 查重
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -221,15 +216,13 @@ public class createAth{
         return content.equals(exercise.content);
     }
 
-    @Override
-    public int hashCode() {
-        return content.hashCode();
+    fraction getResult() {
+        return content.getValue();
     }
 
-
     /**
-     * 中缀表达式生成树
-     * 在差错中调用
+     * 中缀表达式生成树,用栈的特点，把中缀表达式变成前缀表达式
+     * 在判错中调用
      * @param exercise 中缀表达式
      * @return 二叉树
      */
@@ -268,7 +261,7 @@ public class createAth{
     }
 
     /**
-     * 将符号压入节点栈且计算结果
+     * 将符号压入节点栈且计算结果，仅在生成前缀表达式
      */
     private void push(String symbol, Stack<Deposit> nodeStack) {
         Deposit left = nodeStack.pop();

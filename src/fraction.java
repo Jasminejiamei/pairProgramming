@@ -1,7 +1,7 @@
 /**
- *把所有随机生成的数都当成是分数处理
- * 定义分数的四则运算类
- * 生成随机的分子分母
+ * 1. 把所有随机生成的数都当成是分数处理（解决了自然整数，分数，带分数之间的差异）
+ * 2. 定义了分数的四则运算类
+ * 3. 生成随机的数（分子分母）
  */
 public class fraction{
 
@@ -9,7 +9,28 @@ public class fraction{
     private int den;  //分母
 
     /**
-     * 处理随机生成的数值,这个用于分解分数对象(的check的时候用)
+     * 处理随机生成的数值（约分等）,组合分数对象
+     */
+    fraction(int mol, int den) {
+        this.mol = mol;
+        this.den = den;
+//        if (den <= 0) {
+//            throw new RuntimeException("分数分母不能为0");
+//        }
+        //否则就进行约分
+        int mod = 1;
+        int max = den > mol ? den : mol;
+        for (int i = 1; i <= max; i++) {
+            if (mol % i == 0 && den % i == 0) {
+                mod = i;
+            }
+        }
+        this.mol = mol / mod;
+        this.den = den / mod;
+    }
+
+    /**
+     * 处理随机生成的数值,这个用于分解分数对象(仅在判错中使用)
      */
     fraction(String str) {
         int a = str.indexOf("'");
@@ -29,26 +50,6 @@ public class fraction{
         }
     }
 
-    /**
-     * 处理随机生成的数值,组合分数对象，也是重载这个fraction方法，后面调用
-     */
-    fraction(int mol, int den) {
-        this.mol = mol;
-        this.den = den;
-        if (den <= 0) {
-            throw new RuntimeException("分数分母不能为0");
-        }
-        //否则就进行约分
-        int mod = 1;
-        int max = den > mol ? den : mol;
-        for (int i = 1; i <= max; i++) {
-            if (mol % i == 0 && den % i == 0) {
-                mod = i;
-            }
-        }
-        this.mol = mol / mod;
-        this.den = den / mod;
-    }
 
     public String toString() {
         if (den == 1) {
@@ -80,6 +81,9 @@ public class fraction{
         return mol < 0;
     }
 
+    /**
+     * 仅在判断错误中使用，判断左右两个文件生成的答案是否一样
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -89,7 +93,7 @@ public class fraction{
                 den == fraction.den;
     }
     /**
-     * 定义加减乘除类,返回值类型(全都当成分数处理)
+     * 定义加减乘除类,返回值类型(全都当成分数处理)，由于要返回这个类的内容，所以方法前要加类名
      */
     fraction add(fraction fraction) {
         return new fraction(this.mol * fraction.den + this.den * fraction.mol, this.den * fraction.den);
@@ -106,5 +110,6 @@ public class fraction{
     fraction divide(fraction fraction) {
         return new fraction(this.mol * fraction.den, this.den * fraction.mol);
     }
+
 }
 

@@ -3,7 +3,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * 答案判错类
+ */
 public class Judge{
     private int trueNum;  //正确数目
     private int wrongNum;    //错误数目
@@ -31,8 +33,8 @@ public class Judge{
             String[] strs2 = answer.split("\\.");
             if (strs1[0].equals(strs2[0])) {
                 createAth exes = new createAth(false);
-                exes.build(strs1[1].trim());  //去掉两端的空格后再前序遍历二叉树
-                if (exes.getResult().equals(new fraction(strs2[1].trim()))) {
+                exes.build(strs1[1].trim());  //去掉两端的空格后，将后缀表达式生成树变成前缀的，
+                if (exes.getResult().equals(new fraction(strs2[1].trim()))) {   //答案两边都相等，继续执行下面的
                     correctNums.add(strs1[0]);
                     trueNum++;
                 } else {

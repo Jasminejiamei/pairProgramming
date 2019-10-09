@@ -3,10 +3,10 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-//        args = new String[]{"-n", "10", "-r", "10", "-d", "10"};
-        args = new String[]{"-e", "Exercises.txt","-a","Answers.txt"};
+        args = new String[]{"-n", "10", "-r", "10", "-d", "10"};  //两条式子可互换来测试，生成一万道的速度很慢。
+//        args = new String[]{"-e", "Exercises.txt","-a","Answers.txt"};
         Map<String, String> params = checkParams(args);
-        createAth opera = new createAth(params);
+        createAth opera = new createAth(params);   //获取输入内容，运行
         Judge check =  new Judge(params);
         if(params.containsKey("-e")&&params.containsKey("-a")){
             check.Judge();

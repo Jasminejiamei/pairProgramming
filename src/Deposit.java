@@ -15,13 +15,11 @@ public class Deposit{
     }
 
     /**
-     * 把每一个节点存的东西抽出来
+     * 取结点数据
      */
-    Deposit(fraction value){
-        this.value = value;
+    fraction getValue() {
+        return value;
     }
-
-    //拿到结点数据
     Deposit getRight(){
         return right;
     }
@@ -29,32 +27,31 @@ public class Deposit{
         return left;
     }
 
-    //设置结点数据
+    /**
+     * 设置结点数据
+     */
+    Deposit(fraction value){
+        this.value = value;
+    }
     void setLeft(Deposit left){
         this.left = left;
     }
     void setRight(Deposit right){
         this.right = right ;
     }
-
-    fraction getValue() {
-        return value;
-    }
-
     void setValue(fraction value) {
         this.value = value;
     }
 
     @Override
-    //连接结点
     public String toString() {
         return value.toString();
     }
 
-    @Override
     /**
-     * 用于查重
+     * 用于查重,被recSymbols和createAth重写的方法equals调用
      */
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Deposit)) return false;
@@ -62,10 +59,5 @@ public class Deposit{
         return Objects.equals(value, node.value) &&
                 Objects.equals(left, node.left) &&
                 Objects.equals(right, node.right);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(value, left, right);
     }
 }
