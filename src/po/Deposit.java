@@ -1,3 +1,5 @@
+package po;
+
 import java.util.Objects;
 /**
  * 用于存放题目的类，用二叉树的形式
@@ -6,9 +8,9 @@ public class Deposit{
 
     private Deposit left;
     private Deposit right;
-    private fraction value; //用于二叉树结点的是符号与运算结果数值的之间的变化
+    private Fraction value; //用于二叉树结点的是符号与运算结果数值的之间的变化
 
-    Deposit(fraction value, Deposit left, Deposit right){
+    public Deposit(Fraction value, Deposit left, Deposit right){
         this.value = value;
         this.left = left;
         this.right = right;
@@ -17,29 +19,29 @@ public class Deposit{
     /**
      * 取结点数据
      */
-    fraction getValue() {
+    public Fraction getValue() {
         return value;
     }
-    Deposit getRight(){
+    public Deposit getRight(){
         return right;
     }
-    Deposit getLeft(){
+    public Deposit getLeft(){
         return left;
     }
 
     /**
      * 设置结点数据
      */
-    Deposit(fraction value){
+    public Deposit(Fraction value){
         this.value = value;
     }
-    void setLeft(Deposit left){
+    public void setLeft(Deposit left){
         this.left = left;
     }
-    void setRight(Deposit right){
+    public void setRight(Deposit right){
         this.right = right ;
     }
-    void setValue(fraction value) {
+    public void setValue(Fraction value) {
         this.value = value;
     }
 

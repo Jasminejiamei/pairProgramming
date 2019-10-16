@@ -1,9 +1,10 @@
+package po;
+
 /**
  * 1. 把所有随机生成的数都当成是分数处理（解决了自然整数，分数，带分数之间的差异）
  * 2. 定义了分数的四则运算类
- * 3. 生成随机的数（分子分母）
  */
-public class fraction{
+public class Fraction{
 
     private int mol; //分子
     private int den;  //分母
@@ -11,7 +12,7 @@ public class fraction{
     /**
      * 处理随机生成的数值（约分等）,组合分数对象
      */
-    fraction(int mol, int den) {
+    public Fraction(int mol, int den) {
         this.mol = mol;
         this.den = den;
 //        if (den <= 0) {
@@ -32,7 +33,7 @@ public class fraction{
     /**
      * 处理随机生成的数值,这个用于分解分数对象(仅在判错中使用)
      */
-    fraction(String str) {
+    public Fraction(String str) {
         int a = str.indexOf("'");
         int b = str.indexOf("/");
         if (a != -1) {
@@ -70,14 +71,14 @@ public class fraction{
     /**
      * 判空
      */
-    boolean Zero() {
+    public boolean Zero() {
         return den == 0;
     }
 
     /**
      * 判负
      */
-    boolean Negative() {
+    public boolean Negative() {
         return mol < 0;
     }
 
@@ -87,28 +88,28 @@ public class fraction{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof fraction)) return false;
-        fraction fraction = (fraction) o;
+        if (!(o instanceof Fraction)) return false;
+        Fraction fraction = (Fraction) o;
         return mol == fraction.mol &&
                 den == fraction.den;
     }
     /**
      * 定义加减乘除类,返回值类型(全都当成分数处理)，由于要返回这个类的内容，所以方法前要加类名
      */
-    fraction add(fraction fraction) {
-        return new fraction(this.mol * fraction.den + this.den * fraction.mol, this.den * fraction.den);
+    public Fraction add(Fraction fraction) {
+        return new Fraction(this.mol * fraction.den + this.den * fraction.mol, this.den * fraction.den);
     }
 
-    fraction subtract(fraction fraction) {
-        return new fraction(this.mol * fraction.den - this.den * fraction.mol, this.den * fraction.den);
+    public Fraction subtract(Fraction fraction) {
+        return new Fraction(this.mol * fraction.den - this.den * fraction.mol, this.den * fraction.den);
     }
 
-    fraction multiply(fraction fraction) {
-        return new fraction(this.mol * fraction.mol, this.den * fraction.den);
+    public Fraction multiply(Fraction fraction) {
+        return new Fraction(this.mol * fraction.mol, this.den * fraction.den);
     }
 
-    fraction divide(fraction fraction) {
-        return new fraction(this.mol * fraction.den, this.den * fraction.mol);
+    public Fraction divide(Fraction fraction) {
+        return new Fraction(this.mol * fraction.den, this.den * fraction.mol);
     }
 
 }

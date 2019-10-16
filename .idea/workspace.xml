@@ -2,18 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad29f14f-fe63-4cb2-9e14-50ec64695ae4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/createAth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/EntryJudge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Answers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Answers.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Correction.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Correction.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Exercises.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Exercises.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/pairProgramming/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/pairProgramming/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Deposit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Judge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Judge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aboutFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aboutFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fraction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/recSymbols.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/recSymbols.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/pairProgramming/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Deposit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/po/Deposit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Judge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/Judge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aboutFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/FileUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/createAth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/CreateAth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/po/Fraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/recSymbols.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/po/RecSymbols.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,23 +29,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <file leaf-file-name="MainView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/MainView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+            <state relative-caret-position="150">
+              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fraction.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/fraction.java">
+      <file leaf-file-name="Fraction.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/po/Fraction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
+            <state relative-caret-position="-2700">
+              <caret line="3" column="39" lean-forward="true" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EntryJudge.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/service/EntryJudge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-330">
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
               <folding>
-                <element signature="e#2567#2568#0" expanded="true" />
-                <element signature="e#2652#2653#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GenerateView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/GenerateView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JudgeView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/JudgeView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1380">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,33 +84,37 @@
         <entry file="file://$PROJECT_DIR$/Correction.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createAth.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/createAth.java">
+      <file leaf-file-name="RecSymbols.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/po/RecSymbols.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="276" selection-start-line="276" selection-end-line="276" />
+            <state relative-caret-position="150">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreateAth.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/service/CreateAth.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="519">
+              <caret line="200" column="9" selection-start-line="200" selection-start-column="9" selection-end-line="200" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6992#6993#0" expanded="true" />
-                <element signature="e#7033#7034#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Judge.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Judge.java">
+      <file leaf-file-name="Answers.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Answers.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -88,31 +122,8 @@
       <file leaf-file-name="Exercises.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Exercises.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aboutFile.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aboutFile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Deposit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Deposit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
-              <folding>
-                <element signature="e#397#398#0" expanded="true" />
-                <element signature="e#431#432#0" expanded="true" />
-                <element signature="e#749#750#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="270">
+              <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -122,6 +133,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -131,9 +143,10 @@
       <find>+</find>
       <find>calcu</find>
       <find>Object</find>
-      <find>equal</find>
       <find>equals</find>
       <find>初</find>
+      <find>get</find>
+      <find>equal</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,27 +164,43 @@
         <option value="$PROJECT_DIR$/src/creatAth.java" />
         <option value="$PROJECT_DIR$/src/recSymbols.java" />
         <option value="$PROJECT_DIR$/src/Deposit.java" />
+        <option value="$PROJECT_DIR$/src/fraction.java" />
         <option value="$PROJECT_DIR$/src/Judge.java" />
         <option value="$PROJECT_DIR$/src/createAth.java" />
+        <option value="$PROJECT_DIR$/src/CreateAth.java" />
+        <option value="$PROJECT_DIR$/src/po/Fraction.java" />
+        <option value="$PROJECT_DIR$/src/po/Deposit.java" />
+        <option value="$PROJECT_DIR$/src/util/AboutFile.java" />
+        <option value="$PROJECT_DIR$/src/util/RecSymbols.java" />
+        <option value="$PROJECT_DIR$/src/po/RecSymbols.java" />
+        <option value="$PROJECT_DIR$/src/service/Judge.java" />
+        <option value="$PROJECT_DIR$/src/service/Entry.java" />
+        <option value="$PROJECT_DIR$/src/view/MainView.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
-        <option value="$PROJECT_DIR$/src/fraction.java" />
+        <option value="$PROJECT_DIR$/src/service/EntryJudge.java" />
+        <option value="$PROJECT_DIR$/src/view/GenerateView.java" />
+        <option value="$PROJECT_DIR$/src/view/JudgeView.java" />
+        <option value="$PROJECT_DIR$/Answers.txt" />
+        <option value="$PROJECT_DIR$/src/service/CreateAth.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="18" />
-    <option name="y" value="318" />
-    <option name="width" value="1380" />
-    <option name="height" value="552" />
+    <option name="x" value="192" />
+    <option name="y" value="191" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -185,6 +214,31 @@
               <item name="pairProgramming" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="pairProgramming" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pairProgramming" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="po" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pairProgramming" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pairProgramming" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pairProgramming" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pairProgramming" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pairProgramming" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pairProgramming" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="MainView.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -196,6 +250,12 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\aboutFrontEnd\前端\软工作业\pairProgramming\src\view" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -209,7 +269,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainView">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="pairProgramming" />
@@ -217,8 +277,23 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
     </configuration>
+    <configuration name="MainView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.MainView" />
+      <module name="pairProgramming" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.MainView" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainView" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -262,33 +337,53 @@
       <option name="project" value="LOCAL" />
       <updated>1570523230968</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="完成判错功能">
+      <created>1570620651748</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570620651749</updated>
+    </task>
+    <task id="LOCAL-00006" summary="能成功生成10000道">
+      <created>1570637371612</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1570637371612</updated>
+    </task>
+    <task id="LOCAL-00007" summary="修改图形界面">
+      <created>1571199343117</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1571199343117</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Messages" order="3" weight="0.32961783" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5014641" side_tool="true" weight="0.32961783" />
       <window_info anchor="right" id="Maven Projects" order="1" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49926794" visible="true" weight="0.3312102" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.051923078" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49926794" weight="0.3789809" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.3212766" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="0" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.16544656" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.20937042" />
+      <window_info anchor="bottom" id="JProfiler" order="11" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
       <window_info id="UI Designer" order="1" />
       <window_info anchor="right" id="Theme Preview" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.41401273" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.41382977" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="4" side_tool="true" weight="0.329429" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -296,6 +391,7 @@
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="5" sideWeight="0.49853587" weight="0.34713376" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.3280255" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -306,51 +402,23 @@
     <MESSAGE value="运行成功，生出算式，继续完善。" />
     <MESSAGE value="修复算式生成不标准" />
     <MESSAGE value="基本功能完成，还差最后一项" />
-    <option name="LAST_COMMIT_MESSAGE" value="基本功能完成，还差最后一项" />
+    <MESSAGE value="完成判错功能" />
+    <MESSAGE value="能成功生成10000道" />
+    <MESSAGE value="修改图形界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改图形界面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="146" />
+      <option name="time" value="165" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Judge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/generatingTopicTree.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/generatingTopicTree.java" />
-    <entry file="file://$PROJECT_DIR$/src/studentAns.txt" />
-    <entry file="file://$PROJECT_DIR$/src/trueAns.txt" />
-    <entry file="file://$PROJECT_DIR$/src/fraction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3300">
-          <caret line="118" lean-forward="true" selection-start-line="118" selection-end-line="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/Statement.java" />
     <entry file="file://$PROJECT_DIR$/src/generatingTopicTree.java" />
     <entry file="file://$PROJECT_DIR$/src/studentAns.txt" />
     <entry file="file://$PROJECT_DIR$/src/trueAns.txt" />
-    <entry file="file://$PROJECT_DIR$/src/fraction.java">
+    <entry file="file://$PROJECT_DIR$/src/po/Fraction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1830">
           <caret line="65" column="5" lean-forward="true" selection-start-line="63" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
@@ -363,9 +431,6 @@
     <entry file="file://$PROJECT_DIR$/src/file/Correction.txt" />
     <entry file="file://$PROJECT_DIR$/src/file/studentAns.txt" />
     <entry file="file://$PROJECT_DIR$/src/generatingTopicTree.java" />
-    <entry file="file://$PROJECT_DIR$/pairProgramming.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/file/Arithmetic.txt" />
     <entry file="file://$PROJECT_DIR$/trueAns" />
     <entry file="file://$PROJECT_DIR$/Arithmetic" />
@@ -385,10 +450,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
-          <folding>
-            <element signature="e#1410#1411#0" expanded="true" />
-            <element signature="e#1471#1472#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -396,13 +457,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="477">
           <caret line="1494" column="30" selection-start-line="1494" selection-start-column="30" selection-end-line="1494" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://G:/install/JDK/src.zip!/java/lang/Runnable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -428,30 +482,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/recSymbols.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#253#254#0" expanded="true" />
-            <element signature="e#282#283#0" expanded="true" />
-            <element signature="e#328#329#0" expanded="true" />
-            <element signature="e#369#370#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://G:/install/JDK/src.zip!/java/io/File.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7230">
           <caret line="276" selection-start-line="276" selection-end-line="276" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Answers.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -474,35 +508,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Deposit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#397#398#0" expanded="true" />
-            <element signature="e#431#432#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aboutFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Judge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://G:/install/JDK/src.zip!/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -517,47 +522,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Exercises.txt">
+    <entry file="jar://G:/install/JDK/src.zip!/java/util/concurrent/ThreadLocalRandom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18">
+          <caret line="172" lean-forward="true" selection-start-line="172" selection-end-line="172" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairProgramming.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dagdagdga/dahdhahd.java" />
+    <entry file="jar://G:/install/JDK/src.zip!/java/util/concurrent/atomic/AtomicBoolean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="69" column="11" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/FileUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/Judge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="51" column="90" selection-start-line="51" selection-start-column="67" selection-end-line="51" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/po/Deposit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="53" column="38" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://G:/install/JDK/src.zip!/java/lang/Runnable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="67" column="25" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/po/RecSymbols.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/GenerateView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/JudgeView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/CreateAth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="200" column="9" selection-start-line="200" selection-start-column="9" selection-end-line="200" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/EntryJudge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-330">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Correction.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/Exercises.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        <state relative-caret-position="270">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/createAth.java">
+    <entry file="file://$PROJECT_DIR$/Answers.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="276" selection-start-line="276" selection-end-line="276" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6992#6993#0" expanded="true" />
-            <element signature="e#7033#7034#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fraction.java">
+    <entry file="file://$PROJECT_DIR$/src/po/Fraction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="20" column="68" selection-start-line="20" selection-start-column="68" selection-end-line="20" selection-end-column="68" />
-          <folding>
-            <element signature="e#2567#2568#0" expanded="true" />
-            <element signature="e#2652#2653#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-2700">
+          <caret line="3" column="39" lean-forward="true" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
         </state>
       </provider>
     </entry>

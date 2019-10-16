@@ -1,6 +1,8 @@
+package util;
+
 import java.io.*;
 
-public class aboutFile{
+public class FileUtil{
     /**
      * 写入文件中
      */

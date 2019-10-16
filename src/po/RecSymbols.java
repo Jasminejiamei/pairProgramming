@@ -1,16 +1,18 @@
+package po;
+
 /**
  * 用于记录符号结点，与Deposit类是一样的道理
  */
-public class recSymbols extends Deposit {
+public class RecSymbols extends Deposit{
 
     private String symbol;
 
-    recSymbols(String symbol, Deposit left, Deposit right){
+    public RecSymbols(String symbol, Deposit left, Deposit right){
         super(null, left, right);
         this.symbol = symbol;
     }
 
-    String getSymbol() {
+    public String getSymbol() {
         return symbol;
     }
 
@@ -25,8 +27,8 @@ public class recSymbols extends Deposit {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof recSymbols)) return false;
-        recSymbols that = (recSymbols) o;
+        if (!(o instanceof RecSymbols)) return false;
+        RecSymbols that = (RecSymbols) o;
 
         boolean flag = this.symbol != null && symbol.equals(that.symbol);
         if(!flag) return false;

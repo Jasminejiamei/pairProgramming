@@ -1,3 +1,7 @@
+package service;
+
+import po.Fraction;
+import util.FileUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +16,7 @@ public class Judge{
     private String exerciseFileName;  // 题目文件名
     private String answerFileName;  // 答案文件名
 
-    Judge(Map<String, String> params) {
+    public Judge(Map<String, String> params) {
         for (String str : params.keySet()) {
             if (str.equals("-e")) {
                 exerciseFileName = params.get(str);
@@ -28,13 +32,13 @@ public class Judge{
         long start = System.currentTimeMillis();
         List<String> correctNums = new ArrayList<>();
         List<String> wrongNums = new ArrayList<>();
-        aboutFile.readFile((exercise, answer) -> {
+        FileUtil.readFile((exercise, answer) -> {
             String[] strs1 = exercise.split("\\."); //匹配每一行
             String[] strs2 = answer.split("\\.");
             if (strs1[0].equals(strs2[0])) {
-                createAth exes = new createAth(false);
+                CreateAth exes = new CreateAth(false);
                 exes.build(strs1[1].trim());  //去掉两端的空格后，将后缀表达式生成树变成前缀的，
-                if (exes.getResult().equals(new fraction(strs2[1].trim()))) {   //答案两边都相等，继续执行下面的
+                if (exes.getResult().equals(new Fraction(strs2[1].trim()))) {   //答案两边都相等，继续执行下面的
                     correctNums.add(strs1[0]);
                     trueNum++;
                 } else {
@@ -43,9 +47,9 @@ public class Judge{
                 }
             }
         }, exerciseFileName, answerFileName);
-        aboutFile.writeFile(printResult(correctNums, wrongNums), "Correction.txt");
+        FileUtil.writeFile(printResult(correctNums, wrongNums), "Correction.txt");
         long end = System.currentTimeMillis();
-        System.out.println("题目答案对错统计存在当前目录下的Grade.txt文件下，耗时为：" + (end - start) + "ms");
+        System.out.println("题目答案对错统计存在当前目录下的Correction.txt文件下，耗时为：" + (end - start) + "ms");
     }
 
     private String printResult(List<String> correctNums, List<String> wrongNums) {

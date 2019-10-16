@@ -1,4 +1,10 @@
+package service;
+
 import com.sun.org.apache.xalan.internal.xsltc.compiler.util.StringStack;
+import po.Deposit;
+import po.Fraction;
+import util.FileUtil;
+import po.RecSymbols;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,10 +18,10 @@ import java.util.concurrent.TimeUnit;
 /**
  * 生成题目类
  */
-public class createAth{
-    private int maxNum = 100; //生成题目的最大值
+public class CreateAth{
+    private int maxNum = 100; //生成题目的整数最大值
     private int denArea = 20; //分母的范围
-    private int maxCount = 10;//生成题目的数值最大值
+    private int maxCount = 10;//生成题目的最大值
     private Deposit content;
     private static final String[] SYMBOLS = new String[]{
             "+", "-", "x", "\u00F7"
@@ -24,7 +30,7 @@ public class createAth{
     /**
      * 生成随机题目，初始化，把主类中输入的参数内容调进来
      */
-    createAth(Map<String, String> params) {
+    public CreateAth(Map<String, String> params) {
         for (String str : params.keySet()) {
             if (str.equals("-n")) {
                 maxCount = Integer.valueOf(params.get(str));
@@ -57,17 +63,17 @@ public class createAth{
     /**
      * 把生成的每个数进行处理得出分子分母
      */
-    private fraction creator() {
+    private Fraction creator() {
         if (randomBoolean()) {
-            return new fraction((random(maxNum)), 1);
+            return new Fraction((random(maxNum)), 1);
         } else {
             if (randomBoolean()) {
                 int den = random(denArea);
                 int mol = random(den * maxNum);
-                return new fraction(den, mol);
+                return new Fraction(den, mol);
             } else {
                 int den = random(denArea);
-                return new fraction(random(den), den);
+                return new Fraction(random(den), den);
             }
         }
     }
@@ -79,7 +85,7 @@ public class createAth{
      * @param right 右
      * @return 得出来结果后经过约分的分数
      */
-    private fraction calculate(String symbol, fraction left, fraction right) {
+    private Fraction calculate(String symbol, Fraction left, Fraction right) {
         switch (symbol) {
             case "+":
                 return left.add(right);
@@ -102,14 +108,14 @@ public class createAth{
             return new Deposit(creator(),null,null);
         }
         ThreadLocalRandom random = ThreadLocalRandom.current();
-        recSymbols node = new recSymbols(SYMBOLS [random.nextInt(4)],null, null);
+        RecSymbols node = new RecSymbols(SYMBOLS [random.nextInt(4)],null, null);
         //左子树运算符数量
         int left = random.nextInt(fractionNum);
         //右子树运算符数量
         int right = fractionNum - left - 1;
         node.setLeft(build(left));
         node.setRight(build(right));
-        fraction value = calculate(node.getSymbol(),node.getLeft().getValue(),node.getRight().getValue());
+        Fraction value = calculate(node.getSymbol(),node.getLeft().getValue(),node.getRight().getValue());
         //负数处理
         if(value.Negative()){
             //交换左右子树，就是交换两个减数的顺序
@@ -123,6 +129,7 @@ public class createAth{
         node.setValue(value);
         return node;
     }
+
 
     /**
      * 获取表达式，
@@ -138,14 +145,14 @@ public class createAth{
         }
         String frac = node.toString();
         String left = print(node.getLeft());
-        if (node.getLeft() instanceof recSymbols && node instanceof recSymbols) {
-            if (bracketsLeft(((recSymbols) node.getLeft()).getSymbol(), ((recSymbols) node).getSymbol())) {
+        if (node.getLeft() instanceof RecSymbols && node instanceof RecSymbols) {
+            if (bracketsLeft(((RecSymbols) node.getLeft()).getSymbol(), ((RecSymbols) node).getSymbol())) {
                 left = "(" + " " + left + " " + ")";
             }
         }
         String right = print(node.getRight());
-        if (node.getRight() instanceof recSymbols && node instanceof recSymbols) {
-            if (bracketsRight(((recSymbols) node.getRight()).getSymbol(), ((recSymbols) node).getSymbol())) {
+        if (node.getRight() instanceof RecSymbols && node instanceof RecSymbols) {
+            if (bracketsRight(((RecSymbols) node.getRight()).getSymbol(), ((RecSymbols) node).getSymbol())) {
                 right = "(" + " " + right + " " + ")";
             }
         }
@@ -164,7 +171,7 @@ public class createAth{
     /**
      *生成一个题目，先调用下面的createAth方法来判断有没有生成一个用build方法生成的树
      */
-    createAth(boolean isBuild){
+    CreateAth(boolean isBuild){
         if(isBuild){
             ThreadLocalRandom random = ThreadLocalRandom.current();
             int kind = random.nextInt(4);
@@ -177,12 +184,13 @@ public class createAth{
     }
     private ExecutorService executor = Executors.newCachedThreadPool();
 
-    void createAth() {
+    public void createAth() {
         StringBuilder exercises = new StringBuilder();
         StringBuilder answers = new StringBuilder();
-        List<createAth> list = new ArrayList<>();
+        List<CreateAth> list = new ArrayList<>();
+        long start = System.currentTimeMillis();
         for (int i = 1; i <= maxCount;) {
-            createAth generate = new createAth(true);
+            CreateAth generate = new CreateAth(true);
             if (!list.contains(generate)){
                 String[] strs = generate.print().split("=");
                 exercises.append(i).append(". ").append(strs[0]).append("\n");
@@ -191,15 +199,16 @@ public class createAth{
                 i++;
             }
         }
-        executor.execute(() -> aboutFile.writeFile(exercises.toString(), "Exercises.txt"));
-        executor.execute(() -> aboutFile.writeFile(answers.toString(), "Answers.txt"));
+        executor.execute(() -> FileUtil.writeFile(exercises.toString(), "Exercises.txt"));
+        executor.execute(() -> FileUtil.writeFile(answers.toString(), "Answers.txt"));
         executor.shutdown();
+        long end = System.currentTimeMillis();
         try {
             boolean loop = true;
             while (loop) {
                 loop = !executor.awaitTermination(30, TimeUnit.SECONDS);  //超时等待阻塞，直到线程池里所有任务结束
             } //等待所有任务完成
-            System.out.println("生成的" + maxCount + "道题和答案存放在当前目录下的Exercises.txt和Answers.txt");
+            System.out.println("生成的" + maxCount + "道题和答案存放在当前目录下的Exercises.txt和Answers.txt，耗时为："+(end - start) + "ms");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -211,12 +220,12 @@ public class createAth{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof createAth)) return false;
-        createAth exercise = (createAth) o;
+        if (!(o instanceof CreateAth)) return false;
+        CreateAth exercise = (CreateAth) o;
         return content.equals(exercise.content);
     }
 
-    fraction getResult() {
+    Fraction getResult() {
         return content.getValue();
     }
 
@@ -234,7 +243,7 @@ public class createAth{
         for (int i = strs.length - 1; i >= 0; i--) {
             String str = strs[i];
             if (!str.matches("[()+\\u00F7\\-x]")) {
-                depositStack.push(new Deposit(new fraction(str)));
+                depositStack.push(new Deposit(new Fraction(str)));
             } else {
                 //符号结点
                 while (!symbolStack.empty() && ((symbolStack.peekString().equals("x") ||
@@ -266,7 +275,7 @@ public class createAth{
     private void push(String symbol, Stack<Deposit> nodeStack) {
         Deposit left = nodeStack.pop();
         Deposit right = nodeStack.pop();
-        recSymbols node = new recSymbols(symbol, left, right);
+        RecSymbols node = new RecSymbols(symbol, left, right);
         node.setValue(calculate(symbol, left.getValue(), right.getValue()));
         nodeStack.push(node);
     }
